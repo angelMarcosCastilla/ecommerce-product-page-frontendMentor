@@ -51,8 +51,9 @@
           </div>
         </div>
         <div class="flex-center">
-          <button class="icon-cart">
+          <button class="icon-cart btncart">
             <img src="./images/icon-cart.svg" alt="" />
+            <span class="count-cart">0</span>
           </button>
           <span class="container-avatar" role="icon">
             <img
@@ -98,7 +99,7 @@
             Featuring a durable rubber outer sole, they’ll withstand everything
             the weather can offer.
           </p>
-          <div class="container-prices flex-center">
+          <div class="container-prices flex-center flex-direction-column">
             <div class="flex-center">
               <p class="prices">$125.00</p>
               <span class="descount">50%</span>
@@ -106,16 +107,16 @@
             <p class="current-price">$250.00</p>
           </div>
           <div class="container-actions">
-            <div class="actions flex-center">
-              <button>
+            <div class="actions flex-center ">
+              <button id="btnDecrement">
                 <img
                   class="actions-options"
                   src="./images/icon-minus.svg"
                   alt=""
                 />
               </button>
-              <p class="quantity">0</p>
-              <button>
+              <p class="quantity" id="quantity">1</p>
+              <button id="btnIncrement">
                 <img
                   class="actions-options"
                   src="./images/icon-plus.svg"
@@ -123,7 +124,7 @@
                 />
               </button>
             </div>
-            <button class="button">
+            <button class="button buttonAdd" id="btnAddCard">
               <img
                 class="icon-button"
                 src="./images/icon-cart.svg"
@@ -136,41 +137,45 @@
         </section>
       </section>
 
-      <section class="container-cart">
+      <section class="container-cart d-none" id="cart">
         <header class="cart-header">
           <h2 class="cart-title">Cart</h2>
         </header>
         <div class="cart-body flex-center">
-          <!--           <p>Your cart us empty</p> -->
-          <ul>
-            <li class="cart-item-product flex-center">
-              <img
-                class="cart-item-product__image"
-                src="./images/image-product-1-thumbnail.jpg"
-                alt=""
-              />
-              <div class="cart-item-product__details">
-                <p class= "cart-item-product__name">Atumn Limited Edition sneakers</p>
-                <p>
-                  <span class="cart-item-product__operations">
-                    <span>$125.00</span>
-                  x
-                  <span>3</span>
-                  </span>
-                  <span class="cart-item-product__result">$375.00</span>  
-                </p>
-              </div>
-              <button>
-                <img src="./images/icon-delete.svg" alt="" />
-              </button>
-            </li>
-          </ul>
+          <p class="text-empty">Your cart us empty</p>
+          <ul id="cart-list"></ul>
         </div>
         <footer class="cart-footer">
-          <button class="button">Checkouts</button>
+          <button class="button btn-Checkouts" id="btnCheckout">
+            Checkouts
+          </button>
         </footer>
       </section>
     </main>
+
+    <template id="cart-item">
+      <li class="cart-item-product flex-center">
+        <img
+          class="cart-item-product__image"
+          src="./images/image-product-1-thumbnail.jpg"
+          alt=""
+        />
+        <div class="cart-item-product__details">
+          <p class="cart-item-product__name">Atumn Limited Edition sneakers</p>
+          <p>
+            <span class="cart-item-product__operations">
+              <span id="prices">$125.00</span>
+              x
+              <span class="cartQuantity">1</span>
+            </span>
+            <span class="cart-item-product__result">$375.00</span>
+          </p>
+        </div>
+        <button>
+          <img src="./images/icon-delete.svg" alt="" />
+        </button>
+      </li>
+    </template>
     <script src="./js/main.js"></script>
   </body>
 </html>
