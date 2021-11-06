@@ -1,0 +1,138 @@
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+  --very-vark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* --Black(with 75% opacity for lightbox background): hsl(0, 0%, 0%); */
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* -----------Base-------------*/
+body,
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+/*---------utilities------------*/
+.container {
+  width: 95%;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-none {
+  display: none;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+/*----------header--------*/
+.header {
+}
+.header .container {
+  padding: 1.5rem 0;
+  border-bottom: 3px solid #f6f7f8;
+}
+.avatar:hover {
+  border: 2px solid var(--orange);
+}
+
+.icon-cart {
+  margin-right: 1rem;
+}
+
+.menu {
+  gap: 2rem;
+}
+
+.menu__enlace {
+  position: relative;
+  display: block;
+  color: var(---dark-grayish-blue);
+}
+
+.menu__enlace:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -39px;
+  width: 100%;
+  height: 3px;
+  background: var(--orange);
+}
+
+.container-menu {
+}
+
+@media (max-width: 768px) {
+  .header .container {
+    padding: 1rem 0;
+  }
+  .container-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateX(-100%);
+    transition: .2s transform ease-in-out;
+  }
+  .menu--active{
+    transform: translateX(0);
+    
+  }
+  .menu {
+    margin: 0;
+    height: 100%;
+    width: 50%;
+    padding-left: 0;
+    padding-top: 85px ;
+    flex-direction: column;
+    justify-content: center;
+    justify-content:flex-start;
+    background: var(--White);
+  }
+  
+  .hamburger {
+    display: block;
+    margin-right: 1rem;
+    z-index: 10;
+  }
+}
