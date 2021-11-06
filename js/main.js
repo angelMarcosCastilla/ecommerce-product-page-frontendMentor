@@ -9,7 +9,10 @@ const menuToggle = (idToggleMenu, idNavbar) => {
     });
   }
 };
-
+const paintSlides = (countImages) => {
+  document.querySelector(".image-product").src = `./images/image-product-${countImages}.jpg`;
+  document.querySelector(".lightbox .image-product").src = `./images/image-product-${countImages}.jpg`;
+}
 const setQuantity = (number) => {
   const currentQuantity = parseInt($quantity.textContent);
   const newQuantity = currentQuantity + number;
@@ -19,6 +22,7 @@ const setQuantity = (number) => {
 const $cartItem = document.getElementById("cart-item").content;
 const $quantity = document.getElementById("quantity");
 const $countCart = document.getElementById("count-cart");
+const $containerImages = document.querySelector(".container-images");
 console.log($cartItem);
 
 const products = [{}];
@@ -62,26 +66,37 @@ document.addEventListener("click", (e) => {
     document.querySelector("#cart").classList.toggle("d-none");
   }
 
-  if(e.target.closest(".right")){
-    countImages ++;
-    if(countImages > 4){
+  if (e.target.closest(".right")) {
+    countImages++;
+    if (countImages > 4) {
       countImages = 1;
     }
-
-    document.querySelector(".image-product").src = `./images/image-product-${countImages}.jpg`;
+   paintSlides(countImages)
   }
-  if(e.target.closest(".left")){
-    countImages --;
-    if(countImages < 1){
+  if (e.target.closest(".left")) {
+    countImages--;
+    if (countImages < 1) {
       countImages = 4;
     }
+    paintSlides(countImages)
 
-    document.querySelector(".image-product").src = `./images/image-product-${countImages}.jpg`;
   }
-  if(e.target.matches(".list-thumbnails-item img")){
-    document.querySelector(".image-product").src = `./images/image-product-${e.target.dataset.item}.jpg`;
+  if (e.target.matches(".list-thumbnails-item img")) {
+   countImages = e.target.dataset.item;
+    paintSlides(countImages)
+
   }
+  if (e.target.matches(".lightbox")) {
+    document.querySelector(".lightbox").style.display = "none";
+  }
+
 });
 
-//./images/image-product-1.jpg
+document.querySelector(".image-product").addEventListener("click", () => {
+  document.querySelector(".lightbox").textContent = ""
+  document.querySelector(".lightbox").style.display = "flex";
+  $clone = $containerImages.cloneNode(true);
+  document.querySelector(".lightbox").appendChild($clone)
+});
+
 menuToggle("icon-menu", "container-menu");
