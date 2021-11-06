@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce product page</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <!--  <style>
       .attribution {
@@ -17,15 +21,11 @@
     </style> -->
   </head>
   <body>
-    <!--      Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to car -->
     <header class="header">
       <div class="container flex-center">
         <div class="flex-center header-right">
           <button class="hamburger d-none" id="icon-menu">
-            <img src="./images/icon-menu.svg" alt=" icon menu" role="icon" />
+            <img src="./images/icon-menu.svg" alt=" icon menu" />
           </button>
           <a href="#">
             <img src="./images/logo.svg" alt="icono del logo" />
@@ -64,6 +64,113 @@
         </div>
       </div>
     </header>
+    <main>
+      <section class="container-products">
+        <section class="container-images">
+          <div class="container-image-product">
+            <img
+              class="image-product"
+              src="./images/image-product-1.jpg"
+              alt=""
+            />
+            <span class="left">
+              <img
+                class="icon-arrows"
+                src="./images/icon-previous.svg"
+                alt=""
+              />
+            </span>
+            <span class="right">
+              <img class="icon-arrows" src="./images/icon-next.svg" alt="" />
+            </span>
+          </div>
+          <!-- <ul class="list-images-thumbnails">
+            <li class="list-thumbnails-item">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+            </li>
+          </ul> -->
+        </section>
+        <section class="container-descriptions container">
+          <h2 class="product-subtitle">Sneaker Company</h2>
+          <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+          <p class="product-copy">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="container-prices flex-center">
+            <div class="flex-center">
+              <p class="prices">$125.00</p>
+              <span class="descount">50%</span>
+            </div>
+            <p class="current-price">$250.00</p>
+          </div>
+          <div class="container-actions">
+            <div class="actions flex-center">
+              <button>
+                <img
+                  class="actions-options"
+                  src="./images/icon-minus.svg"
+                  alt=""
+                />
+              </button>
+              <p class="quantity">0</p>
+              <button>
+                <img
+                  class="actions-options"
+                  src="./images/icon-plus.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            <button class="button">
+              <img
+                class="icon-button"
+                src="./images/icon-cart.svg"
+                alt="icon de cart"
+                aria-label="icon"
+              />
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="container-cart">
+        <header class="cart-header">
+          <h2 class="cart-title">Cart</h2>
+        </header>
+        <div class="cart-body flex-center">
+          <!--           <p>Your cart us empty</p> -->
+          <ul>
+            <li class="cart-item-product flex-center">
+              <img
+                class="cart-item-product__image"
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+              />
+              <div class="cart-item-product__details">
+                <p class= "cart-item-product__name">Atumn Limited Edition sneakers</p>
+                <p>
+                  <span class="cart-item-product__operations">
+                    <span>$125.00</span>
+                  x
+                  <span>3</span>
+                  </span>
+                  <span class="cart-item-product__result">$375.00</span>  
+                </p>
+              </div>
+              <button>
+                <img src="./images/icon-delete.svg" alt="" />
+              </button>
+            </li>
+          </ul>
+        </div>
+        <footer class="cart-footer">
+          <button class="button">Checkouts</button>
+        </footer>
+      </section>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>

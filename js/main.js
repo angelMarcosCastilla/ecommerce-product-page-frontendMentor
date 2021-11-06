@@ -1,18 +1,13 @@
 const menuToggle = (idToggleMenu, idNavbar) => {
-  const $menuIcon=document.getElementById(idToggleMenu);
-  const $menu=document.getElementById(idNavbar);
-  console.log($menu )
-  console.log($menuIcon )
-
-    if($menuIcon && $menu){
-      $menuIcon.addEventListener("click",()=>{
-        console.log("click")
-        $menu.classList.toggle("menu--active")
-        $menuIcon.classList.toggle("menu__icon--active")
-        
-      })
+  const $menuIcon = document.getElementById(idToggleMenu);
+  const $menu = document.getElementById(idNavbar);
+  if ($menuIcon && $menu) {
+    $menuIcon.addEventListener("click", () => {
+      $menu.classList.toggle("menu--active");
+      const icon = $menu.matches(".menu--active") ? "icon-close" : "icon-menu";
+      $menuIcon.children[0].src = `./images/${icon}.svg`;
+    });
   }
-}
+};
 
-
-menuToggle("icon-menu", "container-menu")
+menuToggle("icon-menu", "container-menu");

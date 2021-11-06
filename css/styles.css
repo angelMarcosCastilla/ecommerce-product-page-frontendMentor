@@ -17,12 +17,15 @@
 
 /* -----------Base-------------*/
 body,
-h1 {
+h1{
   margin: 0;
 }
-
+body{
+  font-family: "Kumbh Sans", sans-serif
+}
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -31,6 +34,7 @@ a {
 
 button {
   border: none;
+  padding: 0;
   outline: none;
   background: none;
   cursor: pointer;
@@ -41,7 +45,7 @@ img {
 }
 /*---------utilities------------*/
 .container {
-  width: 95%;
+  width: 87%;
   max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
@@ -56,8 +60,8 @@ img {
 }
 
 .avatar {
-  width: 45px;
-  height: 45px;
+  width: 27px;
+  height: 27px;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 50%;
@@ -102,7 +106,8 @@ img {
 
 @media (max-width: 768px) {
   .header .container {
-    padding: 1rem 0;
+    padding: 1.1rem 0;
+    margin-bottom: 3px;
   }
   .container-menu {
     position: fixed;
@@ -113,6 +118,7 @@ img {
     background-color: rgba(0, 0, 0, 0.4);
     transform: translateX(-100%);
     transition: .2s transform ease-in-out;
+    z-index: 10;
   }
   .menu--active{
     transform: translateX(0);
@@ -121,7 +127,7 @@ img {
   .menu {
     margin: 0;
     height: 100%;
-    width: 50%;
+    width: 60%;
     padding-left: 0;
     padding-top: 85px ;
     flex-direction: column;
@@ -132,7 +138,174 @@ img {
   
   .hamburger {
     display: block;
-    margin-right: 1rem;
-    z-index: 10;
+    margin-right: 1.2rem;
+    z-index: 11;
   }
+}
+
+
+/*Home*/
+
+/*section de productos */
+
+.image-product{
+
+}
+.container-image-product{
+background-color: grey;
+position: relative;
+margin-bottom: 1.5rem;
+}
+.image-product {
+  height:300px;
+  width:100%;
+  object-fit: cover;
+}
+
+.left, .right{
+  position: absolute;
+  background: var(--White);
+  width: 40px;
+  height:40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.left{
+  left: 15px;
+}
+.right{
+  right: 15px;
+}
+
+.product-subtitle{
+  text-transform: uppercase;
+  font-size: .8rem;
+  color:var(--orange)
+}
+.product-title{
+  font-size: 1.7rem;
+  color: var(--very-vark-blue);
+
+}
+.product-copy{
+   color:var(--dark-grayish-blue);
+   font-size: .99rem;
+   line-height: 1.4rem;
+   margin-bottom: 2rem;
+} 
+
+.container-prices{
+  margin-bottom: 1rem;
+}
+.prices{
+  margin: 0;
+  margin-right: 1rem;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.descount{
+  background:var(--pale-orange);
+  color:var(--orange);
+  padding: .20rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius:5px;
+}
+
+.current-price{
+  color:var(--grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+.actions{
+  margin-bottom: 1rem;
+}
+.actions-options{
+  width:13px;
+  filter: drop-shadow( 0px 0px 5px var(--orange));
+}
+.quantity{
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.button{
+  width:100%;
+  padding: 1rem 0;
+  background: var(--orange);
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  color:var(--White);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow:0px 20px 53px 0px rgba(255,244,204,1);
+}
+.icon-button{
+  width:19px;
+  margin-right: 12px;
+}
+
+.icon-button{
+  filter:brightness(100)
+}
+/*---------Cart----------*/
+.container-cart{
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width:350px;
+  height:250px;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 10px;
+  padding:  1rem  0;
+}
+
+.cart-header{
+  border-bottom: 1px solid grey;
+  padding: 0 1.5rem
+}
+.cart-footer{
+  padding: 0 1.5rem
+}
+.cart-title{
+  font-size: 1.1rem;
+  color:var(--very-vark-blue);
+  font-weight: 700px;
+}
+
+.cart-body{
+  justify-content: center;
+  
+}
+.cart-item-product{
+  gap: 10px;
+}
+.cart-item-product__image{
+  width: 60px;
+}
+.cart-item-product__details {
+  width: 200px;
+}
+.cart-item-product__name{
+  width: 175px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -.6rem;
+}
+
+.cart-item-product__operations{
+  color:var(--grayish-blue)
+}
+.cart-item-product__result{
+color:var(--very-vark-blue);
+font-weight: 700;
 }
