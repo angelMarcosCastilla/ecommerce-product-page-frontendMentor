@@ -23,6 +23,7 @@ console.log($cartItem);
 
 const products = [{}];
 let cart = [];
+let countImages = 1;
 
 document.addEventListener("click", (e) => {
   if (e.target.closest("#btnDecrement")) {
@@ -60,6 +61,27 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".btncart")) {
     document.querySelector("#cart").classList.toggle("d-none");
   }
+
+  if(e.target.closest(".right")){
+    countImages ++;
+    if(countImages > 4){
+      countImages = 1;
+    }
+
+    document.querySelector(".image-product").src = `./images/image-product-${countImages}.jpg`;
+  }
+  if(e.target.closest(".left")){
+    countImages --;
+    if(countImages < 1){
+      countImages = 4;
+    }
+
+    document.querySelector(".image-product").src = `./images/image-product-${countImages}.jpg`;
+  }
+  if(e.target.matches(".list-thumbnails-item img")){
+    document.querySelector(".image-product").src = `./images/image-product-${e.target.dataset.item}.jpg`;
+  }
 });
 
+//./images/image-product-1.jpg
 menuToggle("icon-menu", "container-menu");
