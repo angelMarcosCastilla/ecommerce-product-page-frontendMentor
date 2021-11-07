@@ -23,9 +23,7 @@ const $cartItem = document.getElementById("cart-item").content;
 const $quantity = document.getElementById("quantity");
 const $countCart = document.getElementById("count-cart");
 const $containerImages = document.querySelector(".container-images");
-console.log($cartItem);
 
-const products = [{}];
 let cart = [];
 let countImages = 1;
 
@@ -47,19 +45,21 @@ document.addEventListener("click", (e) => {
     let total = (quantity * prices).toFixed(2);
 
     cart = [...cart, { name, prices, total, quantity }];
+
     document.querySelector(".count-cart").textContent = quantity;
+
     $fragment = document.createDocumentFragment();
     $cloneCartItem = $cartItem.cloneNode(true);
+
     $cloneCartItem.querySelector(".cartQuantity").textContent = quantity;
-    $cloneCartItem.querySelector(".cart-item-product__result").textContent =
-      total;
+    $cloneCartItem.querySelector(".cart-item-product__result").textContent = total;
     $fragment.appendChild($cloneCartItem);
     document.querySelector("#cart-list").appendChild($fragment);
 
     if (cart.length > 0) {
       document.querySelector(".text-empty").style.display = "none";
-      document.querySelector("#btnCheckout").classList.remove("btn-Checkouts");
-    }
+document.querySelector("#btnCheckout").classList.remove("btn-Checkouts")
+     }
   }
 
   if (e.target.closest(".btncart")) {

@@ -51,10 +51,28 @@
           </div>
         </div>
         <div class="flex-center">
-          <button class="icon-cart btncart">
+         <div class="icon-cart">
+          <button class=" btncart">
             <img src="./images/icon-cart.svg" alt="" />
             <span class="count-cart">0</span>
           </button>
+
+          <section class="container-cart d-none" id="cart">
+            <header class="cart-header">
+              <h2 class="cart-title">Cart</h2>
+            </header>
+            <div class="cart-body flex-center">
+              <p class="text-empty">Your cart us empty</p>
+              <ul id="cart-list"></ul>
+            </div>
+            <footer class="cart-footer">
+              <button class="button btn-Checkouts" id="btnCheckout">
+                Checkouts
+              </button>
+            </footer>
+          </section>
+         </div>
+          
           <span class="container-avatar" role="icon">
             <img
               class="avatar"
@@ -85,20 +103,36 @@
               <img class="icon-arrows" src="./images/icon-next.svg" alt="" />
             </span>
           </div>
-           <ul class="list-images-thumbnails flex-center">
+          <ul class="list-images-thumbnails flex-center">
             <li class="list-thumbnails-item">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="" data-item="1"/>
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+                data-item="1"
+              />
             </li>
             <li class="list-thumbnails-item">
-              <img src="./images/image-product-2-thumbnail.jpg" alt="" data-item="2"/>
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt=""
+                data-item="2"
+              />
             </li>
             <li class="list-thumbnails-item">
-              <img src="./images/image-product-3-thumbnail.jpg" alt="" data-item="3"/>
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt=""
+                data-item="3"
+              />
             </li>
             <li class="list-thumbnails-item">
-              <img src="./images/image-product-4-thumbnail.jpg" alt="" data-item="4"/>
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt=""
+                data-item="4"
+              />
             </li>
-          </ul> 
+          </ul>
         </section>
         <section class="container-descriptions container">
           <h2 class="product-subtitle">Sneaker Company</h2>
@@ -116,7 +150,7 @@
             <p class="current-price">$250.00</p>
           </div>
           <div class="container-actions">
-            <div class="actions flex-center ">
+            <div class="actions flex-center">
               <button id="btnDecrement">
                 <img
                   class="actions-options"
@@ -144,21 +178,6 @@
             </button>
           </div>
         </section>
-      </section>
-
-      <section class="container-cart d-none" id="cart">
-        <header class="cart-header">
-          <h2 class="cart-title">Cart</h2>
-        </header>
-        <div class="cart-body flex-center">
-          <p class="text-empty">Your cart us empty</p>
-          <ul id="cart-list"></ul>
-        </div>
-        <footer class="cart-footer">
-          <button class="button btn-Checkouts" id="btnCheckout">
-            Checkouts
-          </button>
-        </footer>
       </section>
     </main>
 
